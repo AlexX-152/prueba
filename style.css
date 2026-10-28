@@ -1,0 +1,213 @@
+/* ==============================================================
+   ESTILOS GENERALES SEGÚN NORMAS APA 7ma EDICIÓN
+   Estudiante: Fabián Cáceres (Cód: 256272)
+   Institución: IUTEPI - Análisis de Sistemas
+   ============================================================== */
+
+/* Tipografía Arial 12pt (16px) e Interlineado Doble (2.0) */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px; /* Equivalente a 12pt en visualización web */
+    line-height: 2.0; /* Interlineado doble APA 7 */
+    color: #000000 !important; /* TEXTO STRICTAMENTE NEGRO */
+    background-color: #f4f4f4; /* Fondo neutro para resaltar la hoja */
+    margin: 0;
+    padding: 20px;
+}
+
+/* Hoja de papel formato Carta en pantalla */
+.contenedor-hoja {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #ffffff; /* Hoja blanca */
+    padding: 50px 60px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #000000;
+}
+
+/* REGLA STRICTA: NADA DE TEXTO AZUL O COLORES. TODO EN NEGRO */
+h1, h2, h3, h4, p, a, li, span, strong, label, button {
+    color: #000000 !important;
+}
+
+/* Títulos APA */
+h1 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000000; /* Línea separadora sencilla negra */
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Párrafos con alineación justificada y sangría de primera línea */
+p {
+    text-align: justify;
+    margin-bottom: 15px;
+    text-indent: 0.5in; /* Sangría APA 7 (aprox 36px) */
+}
+
+/* Quitar sangría a párrafos de la portada, listas y bloques de código */
+.portada p, ul p, ol p, .sin-sangria {
+    text-indent: 0 !important;
+}
+
+/* Estilo de la Portada Institucional IUTEPI */
+.portada {
+    text-align: center;
+    min-height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    page-break-after: always;
+    border-bottom: 2px dashed #000000;
+    margin-bottom: 40px;
+}
+
+.portada-encabezado {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.portada-titulo {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 50px 0;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.portada-datos {
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Menú de Navegación Simple (Estilo Botones Universitarios) */
+.menu-navegacion {
+    border: 1px solid #000000;
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.btn-tab {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 0px;
+}
+
+.btn-tab:hover, .btn-tab.activo {
+    background-color: #e0e0e0;
+    text-decoration: underline;
+}
+
+/* Control de visibilidad de secciones */
+.seccion-contenido {
+    display: none;
+}
+
+.seccion-contenido.activa {
+    display: block;
+}
+
+/* Listas configuradas con interlineado APA */
+ol, ul {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    line-height: 2.0;
+}
+
+li {
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+/* Bloque de Código formateado de forma simple */
+pre {
+    background-color: #f8f8f8;
+    border: 1px solid #000000;
+    padding: 15px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Botón simple para copiar código */
+.btn-copiar {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 5px 12px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.btn-copiar:hover {
+    background-color: #d9d9d9;
+}
+
+/* Alerta de confirmación */
+#mensaje-alerta {
+    display: none;
+    background-color: #f0f0f0;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Sangría Francesa para Referencias APA 7 */
+.referencia {
+    padding-left: 36px;
+    text-indent: -36px;
+    margin-bottom: 15px;
+    text-align: left;
+    line-height: 2.0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 15px;
+    border-top: 1px solid #000000;
+    font-size: 14px;
+}
