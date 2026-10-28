@@ -3,231 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual GitHub Pages y Clase de C# 5.0 - APA 7</title>
-    <style>
-        /* ==============================================================
-           ESTILOS GENERALES SEGÚN NORMAS APA 7ma EDICIÓN
-           Estudiante: Fabián Cáceres (Cód: 256272)
-           Institución: IUTEPI - Análisis de Sistemas
-           ============================================================== */
-
-        /* Tipografía Arial 12pt (16px) e Interlineado Doble (2.0) */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px; /* Equivalente a 12pt en visualización web */
-            line-height: 2.0; /* Interlineado doble APA 7 */
-            color: #000000 !important; /* TEXTO STRICTAMENTE NEGRO */
-            background-color: #f4f4f4; /* Fondo neutro para resaltar la hoja */
-            margin: 0;
-            padding: 20px;
-        }
-
-        /* Hoja de papel formato Carta en pantalla */
-        .contenedor-hoja {
-            max-width: 850px;
-            margin: 0 auto;
-            background-color: #ffffff; /* Hoja blanca */
-            padding: 50px 60px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            border: 1px solid #000000;
-        }
-
-        /* REGLA STRICTA: NADA DE TEXTO AZUL O COLORES. TODO EN NEGRO */
-        h1, h2, h3, h4, p, a, li, span, strong, label, button {
-            color: #000000 !important;
-        }
-
-        /* Títulos APA */
-        h1 {
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        h2 {
-            font-size: 16px;
-            font-weight: bold;
-            text-align: left;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #000000; /* Línea separadora sencilla negra */
-            padding-bottom: 5px;
-        }
-
-        h3 {
-            font-size: 16px;
-            font-weight: bold;
-            text-align: left;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-
-        /* Párrafos con alineación justificada y sangría de primera línea */
-        p {
-            text-align: justify;
-            margin-bottom: 15px;
-            text-indent: 0.5in; /* Sangría APA 7 (aprox 36px) */
-        }
-
-        /* Quitar sangría a párrafos de la portada, listas y bloques de código */
-        .portada p, ul p, ol p, .sin-sangria {
-            text-indent: 0 !important;
-        }
-
-        /* Estilo de la Portada Institucional IUTEPI */
-        .portada {
-            text-align: center;
-            min-height: 850px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            page-break-after: always;
-            border-bottom: 2px dashed #000000;
-            margin-bottom: 40px;
-        }
-
-        .portada-encabezado {
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 1.5;
-        }
-
-        .portada-titulo {
-            font-size: 16px;
-            font-weight: bold;
-            margin: 50px 0;
-            line-height: 1.8;
-            text-align: center;
-        }
-
-        .portada-datos {
-            font-size: 16px;
-            line-height: 1.8;
-            text-align: center;
-        }
-
-        /* Menú de Navegación Simple (Estilo Botones Universitarios) */
-        .menu-navegacion {
-            border: 1px solid #000000;
-            padding: 15px;
-            margin-bottom: 30px;
-            background-color: #ffffff;
-            text-align: center;
-        }
-
-        .btn-tab {
-            background-color: #ffffff;
-            color: #000000;
-            border: 1px solid #000000;
-            padding: 10px 20px;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            margin: 5px;
-            border-radius: 0px;
-        }
-
-        .btn-tab:hover, .btn-tab.activo {
-            background-color: #e0e0e0;
-            text-decoration: underline;
-        }
-
-        /* Control de visibilidad de secciones mediante JavaScript */
-        .seccion-contenido {
-            display: none;
-        }
-
-        .seccion-contenido.activa {
-            display: block;
-        }
-
-        /* Listas configuradas con interlineado APA */
-        ol, ul {
-            margin-left: 30px;
-            margin-bottom: 20px;
-            line-height: 2.0;
-        }
-
-        li {
-            margin-bottom: 10px;
-            text-align: justify;
-        }
-
-        /* Bloque de Código formateado de forma simple */
-        pre {
-            background-color: #f8f8f8;
-            border: 1px solid #000000;
-            padding: 15px;
-            font-family: "Courier New", Courier, monospace;
-            font-size: 13px;
-            line-height: 1.4;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-
-        /* Botón simple para copiar código */
-        .btn-copiar {
-            background-color: #ffffff;
-            color: #000000;
-            border: 1px solid #000000;
-            padding: 5px 12px;
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .btn-copiar:hover {
-            background-color: #d9d9d9;
-        }
-
-        /* Alerta de confirmación */
-        #mensaje-alerta {
-            display: none;
-            background-color: #f0f0f0;
-            color: #000000;
-            border: 1px solid #000000;
-            padding: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        /* Sangría Francesa para Referencias APA 7 */
-        .referencia {
-            padding-left: 36px;
-            text-indent: -36px;
-            margin-bottom: 15px;
-            text-align: left;
-            line-height: 2.0;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 15px;
-            border-top: 1px solid #000000;
-            font-size: 14px;
-        }
-    </style>
+    <title>Manual GitHub Pages y Clase C# 5.0 - APA 7</title>
+    <!-- Vinculación a la hoja de estilos externa -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- CONTENEDOR TIPO HOJA CARTA -->
     <div class="contenedor-hoja">
 
-        <!-- ==============================================================
-             PORTADA INSTITUCIONAL APA 7 - IUTEPI
-             ============================================================== -->
+        <!-- PORTADA INSTITUCIONAL APA 7 - IUTEPI -->
         <section class="portada">
             <div class="portada-encabezado">
                 Instituto Universitario de Tecnología para la Informática (IUTEPI)<br>
@@ -243,12 +28,12 @@
                 <strong>Código / Cédula:</strong> 256272<br>
                 <strong>Carrera:</strong> Análisis de Sistemas<br>
                 <strong>Semestre:</strong> 3er Semestre<br>
-                <strong>Profesor:</strong>Ing. Robyir Loreto<br><br>
+                <strong>Profesor:</strong> Ing. Robyir Loreto<br><br>
                 Valencia, Carabobo - 2026
             </div>
         </section>
 
-        <!-- MENÚ DE PESTAÑAS SIMPLES EN JAVASCRIPT VAINILLA -->
+        <!-- MENÚ DE NAVEGACIÓN -->
         <nav class="menu-navegacion">
             <button id="tab1" class="btn-tab activo" onclick="cambiarSeccion('seccion-github', 'tab1')">1. Manual GitHub Pages</button>
             <button id="tab2" class="btn-tab" onclick="cambiarSeccion('seccion-csharp', 'tab2')">2. Clase C# 5.0 (POO)</button>
@@ -258,9 +43,7 @@
         <!-- Mensaje flotante al copiar código -->
         <div id="mensaje-alerta">¡Código copiado al portapapeles correctamente!</div>
 
-        <!-- ==============================================================
-             SECCIÓN 1: MANUAL PASO A PASO EN GITHUB PAGES
-             ============================================================== -->
+        <!-- SECCIÓN 1: MANUAL GITHUB PAGES -->
         <div id="seccion-github" class="seccion-contenido activa">
             <h1>Manual Paso a Paso: Publicación en GitHub Pages</h1>
 
@@ -333,9 +116,7 @@
             <button class="btn-copiar" onclick="copiarTexto('codigo-html-ejemplo')">Copiar Código HTML</button>
         </div>
 
-        <!-- ==============================================================
-             SECCIÓN 2: CLASE DE C# 5.0 (MODIFICADORES Y ENCAPSULAMIENTO)
-             ============================================================== -->
+        <!-- SECCIÓN 2: CLASE DE C# 5.0 (POO) -->
         <div id="seccion-csharp" class="seccion-contenido">
             <h1>Lección de C# 5.0: Modificadores de Acceso y Encapsulamiento</h1>
 
@@ -365,19 +146,12 @@
 
 namespace EjercicioIutepi
 {
-    // Clase que representa una Cuenta Bancaria
     public class CuentaBancaria
     {
-        // 1. ATRIBUTO PRIVADO (private): Solo se lee/modifica DENTRO de esta clase.
         private double saldo;
-
-        // 2. ATRIBUTO PROTEGIDO (protected): Accesible en esta clase y por herencia.
         protected string titular;
-
-        // 3. ATRIBUTO INTERNO (internal): Accesible desde todo el proyecto actual.
         internal string numeroCuenta;
 
-        // CONSTRUCTOR PÚBLICO (public)
         public CuentaBancaria(string titular, string numeroCuenta, double saldoInicial)
         {
             this.titular = titular;
@@ -385,7 +159,6 @@ namespace EjercicioIutepi
             this.saldo = saldoInicial;
         }
 
-        // MÉTODOS PÚBLICOS (public) para manipular la variable privada con seguridad
         public void Depositar(double monto)
         {
             if (monto > 0)
@@ -403,21 +176,15 @@ namespace EjercicioIutepi
         }
     }
 
-    // Clase Ejecutable principal
     class Program
     {
         static void Main(string[] args)
         {
-            // Creación del objeto instanciando la clase
             CuentaBancaria miCuenta = new CuentaBancaria("Fabián Cáceres", "0102-00256272", 150.0);
 
-            // Acceso a métodos públicos
             miCuenta.MostrarInformacion();
             miCuenta.Depositar(50.0);
             miCuenta.MostrarInformacion();
-
-            // EJEMPLO DE ERROR DE COMPILACIÓN POR ENCAPSULAMIENTO:
-            // miCuenta.saldo = 1000.0; // ERROR: 'saldo' es privado y no se puede tocar desde afuera.
 
             Console.WriteLine("Presione una tecla para finalizar...");
             Console.ReadKey();
@@ -427,9 +194,7 @@ namespace EjercicioIutepi
             <button class="btn-copiar" onclick="copiarTexto('codigo-csharp-ejemplo')">Copiar Código C# 5.0</button>
         </div>
 
-        <!-- ==============================================================
-             SECCIÓN 3: REFERENCIAS BIBLIOGRÁFICAS (NORMAS APA 7)
-             ============================================================== -->
+        <!-- SECCIÓN 3: REFERENCIAS (APA 7) -->
         <div id="seccion-referencias" class="seccion-contenido">
             <h1>Referencias Bibliográficas (APA 7ma Edición)</h1>
 
@@ -456,59 +221,12 @@ namespace EjercicioIutepi
 
         <!-- PIE DE PÁGINA UNIVERSITARIO -->
         <footer>
-            <p>Instituto Universitario de Tecnología para la Informática </p>
+            <p>Instituto Universitario de Tecnología para la Informática</p>
         </footer>
 
     </div>
 
-    <!-- ==============================================================
-         LÓGICA JAVASCRIPT SIMPLE Y PRINCIPIANTE (3ER SEMESTRE)
-         ============================================================== -->
-    <script>
-        // Función 1: Cambiar entre pestañas/secciones
-        function cambiarSeccion(idSeccion, idTab) {
-            // Ocultar todas las secciones
-            var secciones = document.getElementsByClassName("seccion-contenido");
-            for (var i = 0; i < secciones.length; i++) {
-                secciones[i].classList.remove("activa");
-            }
-
-            // Desactivar todos los botones de las pestañas
-            var botones = document.getElementsByClassName("btn-tab");
-            for (var j = 0; j < botones.length; j++) {
-                botones[j].classList.remove("activo");
-            }
-
-            // Mostrar la sección elegida y marcar su botón activo
-            document.getElementById(idSeccion).classList.add("activa");
-            document.getElementById(idTab).classList.add("activo");
-        }
-
-        // Función 2: Copiar texto al portapapeles usando JavaScript clásico
-        function copiarTexto(idElemento) {
-            var bloqueCodigo = document.getElementById(idElemento);
-            var texto = bloqueCodigo.innerText;
-
-            // Crear caja de texto temporal
-            var areaTemporal = document.createElement("textarea");
-            areaTemporal.value = texto;
-            document.body.appendChild(areaTemporal);
-
-            // Seleccionar y copiar el contenido
-            areaTemporal.select();
-            document.execCommand("copy");
-
-            // Borrar el elemento temporal de la memoria
-            document.body.removeChild(areaTemporal);
-
-            // Mostrar mensaje de confirmación durante 3 segundos
-            var mensaje = document.getElementById("mensaje-alerta");
-            mensaje.style.display = "block";
-
-            setTimeout(function() {
-                mensaje.style.display = "none";
-            }, 3000);
-        }
-    </script>
+    <!-- Vinculación al archivo de scripts externo -->
+    <script src="script.js"></script>
 </body>
 </html>
